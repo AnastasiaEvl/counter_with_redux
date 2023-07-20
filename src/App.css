@@ -1,0 +1,124 @@
+.App {
+  text-align: center;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.App__title{
+  text-transform: uppercase;
+  color: #7e3d4a;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App__counter{
+  width: 5rem;
+  height: 5rem;
+  border: 5px solid #a96d8e;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 5rem;
+  background: #e0b9ca;
+}
+.App__buttons{
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.App__button{
+  background-color: #bbcacc;
+  font-weight: bold;
+  color: black;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  transition: 0.3s;
+}
+.App__button:hover{
+  cursor: pointer;
+  background-color: #a96d8e;
+  transition: 0.3s;
+}
+
+.App__counter {
+  position: relative;
+  z-index: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.App__counter::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: #EF6C00;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(#EF6C00, #EF6C00), linear-gradient(#FFE0B2, #FFE0B2), linear-gradient(#EF6C00, #EF6C00), linear-gradient(#FFE0B2, #FFE0B2);
+  animation: anim-ramka-1 4s linear infinite;
+}
+.App__counter::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: white;
+  border-radius: 50%;
+}
+@keyframes anim-ramka-1 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
